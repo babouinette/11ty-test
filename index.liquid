@@ -1,0 +1,34 @@
+---
+eleventyComputed:
+    productsComputed : "{{products}}"
+---
+{%for product in products%}
+    {{product._id}} - {{product.title}}
+    <br>
+{%endfor%}
+
+<br>
+<br>
+
+Products is : {{products}}
+<br>
+ProductComputed is : {{productsComputed}}
+
+<br>
+<br>
+
+{%if productsComputed != products%}
+    These are not the same
+{%endif%}
+
+<br>
+<br>
+
+{%for product in productsComputed%}
+    {{product}}
+    <br>
+    It seems I cant iterate over this one
+   <br> 
+    {{product.title}}
+<br>
+{%endfor%}
